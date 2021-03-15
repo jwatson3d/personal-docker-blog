@@ -1,4 +1,5 @@
-version: '3'
+version: "3.9"
+# https://salzam.com/dockerize-wordpress-with-themes-plugins-and-common-configuration/
 services:
   wordpress:
     build: ../
@@ -9,7 +10,7 @@ services:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: root
-      WORDPRESS_DB_NAME: salman_blog
+      WORDPRESS_DB_NAME: wp_db
       WORDPRESS_CONFIG_EXTRA: |
         /* Multisite */
         #define('WP_ALLOW_MULTISITE', true );
@@ -30,7 +31,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: root
-      MYSQL_DATABASE: salman_blog
+      MYSQL_DATABASE: wp_db
     volumes:
       - db:/var/lib/mysql
     ports:
